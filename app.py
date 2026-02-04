@@ -13,7 +13,7 @@ booster = xgb.Booster()
 booster.load_model("xgb_v1_model.json")
 
 st.set_page_config(page_title="Diabetes Risk Predictor", layout="centered")
-st.title("Diabetes Risk Predictor (XGBoost)")
+st.title("Diabetes Risk Predictor")
 st.write("Enter patient details to estimate diabetes probability.")
 st.caption("Disclaimer: This tool provides an ML-based estimate and is not a medical diagnosis.")
 
@@ -38,26 +38,26 @@ gender = st.selectbox("Gender", ["Male", "Female"], index=0)
 
 ethnicity = st.selectbox(
     "Ethnicity",
-    ["Asian", "Black", "White", "Hispanic", "Middle Eastern", "Indigenous", "Mixed", "Other", "Unknown"],
-    index=8
+    ["Asian", "Black", "White", "Hispanic", "Middle Eastern", "Indigenous", "Mixed"],
+    index=0
 )
 
 education_level = st.selectbox(
     "Education Level",
-    ["No schooling", "Primary", "Secondary", "High School", "Diploma", "Bachelor", "Master", "PhD", "Other", "Unknown"],
-    index=9
+    ["No schooling", "Primary", "Secondary", "High School", "Diploma", "Bachelor", "Master", "PhD"],
+    index=0
 )
 
 income_level = st.selectbox(
     "Income Level",
-    ["Low", "Lower-Middle", "Middle", "Upper-Middle", "High", "Other", "Unknown"],
-    index=6
+    ["Low", "Lower-Middle", "Middle", "Upper-Middle", "High"],
+    index=0
 )
 
 employment_status = st.selectbox(
     "Employment Status",
-    ["Employed", "Self-employed", "Unemployed", "Student", "Retired", "Other", "Unknown"],
-    index=6
+    ["Employed", "Self-employed", "Unemployed", "Student", "Retired"],
+    index=0
 )
 
 st.header("2) Lifestyle")
@@ -69,7 +69,7 @@ screen_time = num_input("Screen time (hours per day)", 0.0, 24.0, 4.0, 0.5)
 
 smoking_status = st.selectbox(
     "Smoking status",
-    ["Never", "Former", "Current", "Occasional", "Unknown"],
+    ["Never", "Former", "Current", "Occasional"],
     index=0
 )
 
@@ -89,9 +89,9 @@ ldl_cholesterol = num_input("LDL cholesterol", 0.0, 500.0, 100.0, 1.0)
 triglycerides = num_input("Triglycerides", 0.0, 1500.0, 150.0, 1.0)
 
 st.header("6) Medical History")
-family_history_diabetes = st.selectbox("Family history of diabetes", ["Yes", "No", "Unknown"], index=2)
-hypertension_history = st.selectbox("History of hypertension", ["Yes", "No", "Unknown"], index=2)
-cardiovascular_history = st.selectbox("Cardiovascular history", ["Yes", "No", "Unknown"], index=2)
+family_history_diabetes = st.selectbox("Family history of diabetes", ["Yes", "No"], index=1)
+hypertension_history = st.selectbox("History of hypertension", ["Yes", "No"], index=1)
+cardiovascular_history = st.selectbox("Cardiovascular history", ["Yes", "No"], index=1)
 
 # =========================
 # Build raw row (original schema)
