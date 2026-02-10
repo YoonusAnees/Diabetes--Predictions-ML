@@ -79,7 +79,6 @@ Download these two files from the Kaggle notebook output:
 ```powershell
 cd D:\ML
 python -m venv .venv
-.\.venv\Scripts\activate
 python -m pip install --upgrade pip
 ```
 
